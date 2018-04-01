@@ -23,7 +23,7 @@ ModuleBackground::ModuleBackground()
 	//boat 
 	boat.x = 0;
 	boat.y = 0;
-	boat.w = 500;
+	boat.w = 530;
 	boat.h = 250;
 
 	// flag animation
@@ -65,6 +65,7 @@ update_status ModuleBackground::Update()
 	// TODO 2: Draw the ship from the sprite sheet with some parallax effect
 
 	App->render->Blit(graphics, -15,-25, &boat, 0.75f); // flag animation
+
 	// TODO 3: Animate the girl on the ship (see the sprite sheet)
 	App->render->Blit(graphics, 186, 103, &(girlShip.GetCurrentFrame()), 0.75f); // flag animation
 	
