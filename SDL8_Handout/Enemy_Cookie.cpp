@@ -14,19 +14,21 @@ Enemy_Cookie::Enemy_Cookie(int x, int y) : Enemy(x, y)
 	animation = &fly;
 
 	collider = App->collision->AddCollider({ 0, 0, 24, 24 }, COLLIDER_TYPE::COLLIDER_ENEMY, (Module*)App->enemies);
-
+	
 	original_y = y;
-
-	pathCookie.PushBack({ 1,0 }, 10);
+	
+	pos = { 100, 100 };
+	pathCookie.PushBack({ 1,1 }, 10);
+	pathCookie.PushBack({ -1,-1 }, 10);
 
 }
 
 
 void Enemy_Cookie::Move() 
 {
-	position += pathCookie.GetCurrentPosition;
+	position =pos+  pathCookie.GetCurrentPosition;
 
-	//position = pathCookie.GetCurrentPosition;
+
 	
 	
 	/*if (going_up)

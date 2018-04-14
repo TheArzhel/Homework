@@ -17,7 +17,7 @@ private:
 public:
 
 	Enemy_Cookie(int x, int y);
-
+	iPoint pos;
 	void Move();
 };
 
