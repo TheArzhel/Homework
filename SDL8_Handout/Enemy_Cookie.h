@@ -13,11 +13,13 @@ private:
 	int original_y = 0;
 	Animation fly;
 	Path pathCookie;
+	
+	int cookiePositionY;
+	int cookiePositionX;
 
 public:
 
 	Enemy_Cookie(int x, int y);
-	iPoint pos;
 	void Move();
 };
 

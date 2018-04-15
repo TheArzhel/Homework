@@ -14,38 +14,25 @@ Enemy_Cookie::Enemy_Cookie(int x, int y) : Enemy(x, y)
 	animation = &fly;
 
 	collider = App->collision->AddCollider({ 0, 0, 24, 24 }, COLLIDER_TYPE::COLLIDER_ENEMY, (Module*)App->enemies);
+
+	cookiePositionX = x;
+	cookiePositionY = y;
+
 	
-	original_y = y;
-	
-	pos = { 100, 100 };
-	pathCookie.PushBack({ 1,1 }, 10);
-	pathCookie.PushBack({ -1,-1 }, 10);
+	pathCookie.PushBack({ -1,-1 }, 70);
+	pathCookie.PushBack({ -1,1 }, 70);
 
 }
 
 
-void Enemy_Cookie::Move() 
+void Enemy_Cookie::Move()
 {
-	position =pos+  pathCookie.GetCurrentPosition;
+	position.x = cookiePositionX + pathCookie.GetCurrentPosition().x;
+	position.y = cookiePositionY + pathCookie.GetCurrentPosition().y;
+
+
+
 
 
 	
-	
-	/*if (going_up)
-	{
-		if (wave > 1.0f)
-			going_up = false;
-		else
-			wave += 0.05f;
-	}
-	else
-	{
-		if (wave < -1.0f)
-			going_up = true;
-		else
-			wave -= 0.05f;
-	}
-
-	position.y = int(float(original_y) + (25.0f * sinf(wave)));
-	position.x -= 1;*/
 }
